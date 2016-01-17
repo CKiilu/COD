@@ -25,7 +25,15 @@ public class Soldier {
 	public void setRemainingHP(int remainingHP) {
 		this.remainingHP = remainingHP;
 	}
+	public void resetHP(){
+		this.HP=HP;
+	}
 	public void takeDamage(int damage){
 		this.remainingHP=getHP() - damage;
+			if(this.remainingHP<1){
+				resetHP();
+				this.lives--;
+			}
 	}
+	
 }
